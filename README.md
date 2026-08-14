@@ -1,6 +1,6 @@
-# Product, Refined.
+# Vibe, Refined.
 
-Static landing page for Product, Refined., a boutique product studio for AI-built products,
+Static landing page for Vibe, Refined., a boutique product studio for AI-built products,
 published from the Prodcraft repository and domain.
 
 ## Netlify deployment

@@ -564,7 +564,7 @@ a:focus-visible {
 }
 
 .apply-card::after {
-  content: "PR";
+  content: "VR";
   position: absolute;
   right: -0.05em;
   bottom: -0.44em;
