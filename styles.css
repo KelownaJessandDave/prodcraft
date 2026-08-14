@@ -381,7 +381,8 @@ a:focus-visible {
 }
 
 .section-heading h2 {
-  font-size: clamp(2.7rem, 5vw, 4.8rem);
+  font-size: clamp(2.35rem, 3.8vw, 3.7rem);
+  line-height: 1.06;
 }
 
 .section-heading > p:last-child {
