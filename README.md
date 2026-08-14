@@ -1,6 +1,7 @@
-# Prodcraft
+# Product, Refined.
 
-Static landing page for Prodcraft, a boutique product studio for AI-built products.
+Static landing page for Product, Refined., a boutique product studio for AI-built products,
+published from the Prodcraft repository and domain.
 
 ## Netlify deployment
 

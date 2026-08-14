@@ -564,7 +564,7 @@ a:focus-visible {
 }
 
 .apply-card::after {
-  content: "PC";
+  content: "PR";
   position: absolute;
   right: -0.05em;
   bottom: -0.44em;
@@ -597,9 +597,19 @@ a:focus-visible {
   align-self: end;
 }
 
-.apply-copy > p:first-child {
+.apply-copy > p:not(.prototype-promise) {
   margin: 0 0 28px;
   font-size: 1rem;
+}
+
+.prototype-promise {
+  margin: 0 0 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(22, 33, 27, 0.35);
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 .interest-form {
@@ -673,12 +683,6 @@ a:focus-visible {
 
 .button-light:hover {
   background: var(--accent);
-}
-
-.apply-note {
-  margin: 15px 0 0;
-  font-size: 0.75rem;
-  font-weight: 650;
 }
 
 .site-footer {
