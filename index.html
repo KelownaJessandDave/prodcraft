@@ -35,7 +35,7 @@
             experience, and give promising prototypes the thoughtful finish they deserve.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#apply">Request a project review</a>
+            <a class="button button-primary" href="#apply">Request a free 30-minute review</a>
             <a class="text-link" href="#approach">See how we work <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -74,7 +74,7 @@
       <section class="approach section-shell" id="approach">
         <div class="section-heading">
           <p class="section-index">02 / Our approach</p>
-          <h2>Not a rebuild.<br />A careful shaping.</h2>
+          <h2>Not a rebuild.<br />A practical next step.</h2>
           <p>
             We preserve the energy and originality of what you made. Then we make deliberate
             choices about what deserves more attention—and what can quietly disappear.
@@ -154,6 +154,21 @@
         </div>
       </section>
 
+      <section class="pricing section-shell" aria-labelledby="pricing-title">
+        <div class="pricing-card">
+          <p class="section-index">04 / A practical first engagement</p>
+          <div class="pricing-copy">
+            <h2 id="pricing-title">A clear next step, shaped around what you made.</h2>
+            <p class="pricing-range">Most initial engagements range from <strong>C$500 to C$1,500</strong>.</p>
+            <p>
+              The exact price depends on what your prototype needs. Work is clearly scoped before it
+              begins, and larger engagements can be paid in milestones.
+            </p>
+          </div>
+          <a class="button button-primary" href="#apply">Start with a free review</a>
+        </div>
+      </section>
+
       <section class="fit section-shell">
         <div class="fit-card fit-positive">
           <p class="section-index">A good fit</p>
@@ -171,7 +186,7 @@
           <ul>
             <li>You're learning the tools but don't have an idea yet</li>
             <li>Tokens are too expensive to get where you need to go</li>
-            <li>You're not confident enough to share</li>
+            <li>You're not ready to share</li>
             <li>More vibe than code</li>
           </ul>
         </div>
@@ -184,8 +199,9 @@
             <h2>Let's see what you've made</h2>
           </div>
           <div class="apply-copy">
+            <p class="prototype-promise">A working prototype is enough.</p>
             <p>
-              Tell us what you built, who it is for, and what still feels unresolved. We'll reply with our first impression and take it from there.
+              Start with a free 30-minute project review. Tell us what you built, who it is for, and what still feels unresolved. We’ll discuss the most useful next step and provide a clear scope and price before any paid work begins.
             </p>
             <form
               class="interest-form"
@@ -196,6 +212,12 @@
               netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="project-interest" />
+              <input type="hidden" name="offer" value="launch" />
+              <input type="hidden" name="utm_source" value="" />
+              <input type="hidden" name="utm_medium" value="" />
+              <input type="hidden" name="utm_campaign" value="" />
+              <input type="hidden" name="utm_content" value="" />
+              <input type="hidden" name="landing-page" value="" />
               <p class="honeypot">
                 <label>Do not fill this out if you are human: <input name="bot-field" /></label>
               </p>
@@ -213,7 +235,43 @@
                 What did you build, and what still feels unresolved?
                 <textarea name="project-note" rows="5" required></textarea>
               </label>
-              <button class="button button-light" type="submit">Request a project review</button>
+              <div class="form-row">
+                <label>
+                  Which AI tool or platform did you use?
+                  <input type="text" name="ai-platform" placeholder="For example, Lovable, Replit, Bolt, or ChatGPT" />
+                </label>
+                <label>
+                  Is anyone else using it or waiting to use it?
+                  <select name="user-status" required>
+                    <option value="">Choose one</option>
+                    <option value="active-users">Yes, people are using it</option>
+                    <option value="waiting-users">Yes, someone is waiting to use it</option>
+                    <option value="creator-only">Not yet—just me</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                What would you most like help with next?
+                <select name="next-help" required>
+                  <option value="">Choose one</option>
+                  <option value="focus-usability">Product focus or usability</option>
+                  <option value="launch-hosting">Getting it online or improving hosting</option>
+                  <option value="accounts-payments">User accounts or payments</option>
+                  <option value="reliability-security">Reliability or security</option>
+                  <option value="other">Something else</option>
+                </select>
+              </label>
+              <label>
+                What investment feels realistic if we find a useful next step?
+                <select name="budget-range" required>
+                  <option value="">Choose one</option>
+                  <option value="under-500">Under C$500</option>
+                  <option value="500-1000">C$500–C$1,000</option>
+                  <option value="1000-1500">C$1,000–C$1,500</option>
+                  <option value="over-1500">Over C$1,500</option>
+                </select>
+              </label>
+              <button class="button button-light" type="submit">Request my free project review</button>
             </form>
           </div>
         </div>
@@ -228,5 +286,17 @@
       <p>Boutique product direction, design, and implementation for thoughtful builders.</p>
       <a href="#apply">Show us your product</a>
     </footer>
+    <script>
+      const attributionFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+      const searchParams = new URLSearchParams(window.location.search);
+
+      attributionFields.forEach((fieldName) => {
+        const field = document.querySelector(`[name="${fieldName}"]`);
+        if (field) field.value = searchParams.get(fieldName) || "";
+      });
+
+      const landingPageField = document.querySelector('[name="landing-page"]');
+      if (landingPageField) landingPageField.value = window.location.href;
+    </script>
   </body>
 </html>

@@ -632,7 +632,8 @@ a:focus-visible {
 }
 
 .interest-form input,
-.interest-form textarea {
+.interest-form textarea,
+.interest-form select {
   width: 100%;
   border: 1px solid rgba(22, 33, 27, 0.35);
   border-radius: 4px;
@@ -653,8 +654,14 @@ a:focus-visible {
   resize: vertical;
 }
 
+.interest-form select {
+  min-height: 48px;
+  padding: 10px 38px 10px 12px;
+}
+
 .interest-form input:focus,
-.interest-form textarea:focus {
+.interest-form textarea:focus,
+.interest-form select:focus {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-color: var(--ink);
@@ -684,6 +691,47 @@ a:focus-visible {
 
 .button-light:hover {
   background: var(--accent);
+}
+
+.pricing {
+  padding-top: 120px;
+}
+
+.pricing-card {
+  display: grid;
+  grid-template-columns: 180px minmax(360px, 1fr) auto;
+  align-items: center;
+  gap: clamp(36px, 7vw, 90px);
+  padding: clamp(40px, 6vw, 72px);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.pricing-copy h2 {
+  max-width: 690px;
+  margin: 0 0 25px;
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4vw, 3.9rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.pricing-copy p {
+  max-width: 670px;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.pricing-copy .pricing-range {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.pricing-range strong {
+  color: var(--forest);
+  font-weight: 800;
 }
 
 .site-footer {
@@ -751,7 +799,8 @@ a:focus-visible {
   }
 
   .outcomes-grid,
-  .apply-card {
+  .apply-card,
+  .pricing-card {
     grid-template-columns: 1fr;
   }
 
@@ -821,7 +870,8 @@ a:focus-visible {
   .manifesto-inner,
   .approach,
   .outcomes-grid,
-  .fit {
+  .fit,
+  .pricing {
     padding-block: 88px;
   }
 
