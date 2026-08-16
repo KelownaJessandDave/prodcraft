@@ -7,8 +7,44 @@
     <meta name="theme-color" content="#f4f1e9" />
     <title>Thank you — Vibe, Refined.</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1937478166927042');
+      fbq('track', 'PageView');
+
+      try {
+        const pendingLeadAt = Number(sessionStorage.getItem('vr_lead_pending_at'));
+        const tenMinutes = 10 * 60 * 1000;
+
+        if (pendingLeadAt && Date.now() - pendingLeadAt < tenMinutes) {
+          fbq('track', 'Lead');
+        }
+
+        sessionStorage.removeItem('vr_lead_pending_at');
+      } catch (error) {
+        // PageView tracking still works when browser storage is unavailable.
+      }
+    </script>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1937478166927042&amp;ev=PageView&amp;noscript=1"
+        alt=""
+      />
+    </noscript>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Vibe, Refined., home">
         <span class="brand-mark" aria-hidden="true">VR</span>
