@@ -750,9 +750,140 @@ a:focus-visible {
   margin: 0;
 }
 
-.site-footer > a {
+.site-footer > a,
+.footer-links a,
+.footer-links button,
+.confirmation-footer a,
+.confirmation-footer button {
   border-bottom: 1px solid var(--line);
   font-weight: 700;
+}
+
+.footer-links,
+.confirmation-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links button,
+.confirmation-footer button {
+  padding: 0;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.confirmation-footer {
+  justify-content: center;
+  padding-bottom: 32px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.consent-banner {
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgb(18 48 38 / 18%);
+}
+
+.consent-copy {
+  max-width: 720px;
+}
+
+.consent-copy strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.consent-copy p {
+  margin: 6px 0 0;
+}
+
+.consent-copy a {
+  color: inherit;
+  font-weight: 800;
+}
+
+.consent-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+.consent-actions .button {
+  white-space: nowrap;
+}
+
+.consent-decline {
+  border-color: var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.privacy-page {
+  max-width: 820px;
+  padding-top: 84px;
+  padding-bottom: 100px;
+}
+
+.privacy-page h1 {
+  max-width: 720px;
+  margin: 10px 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 7vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.privacy-updated {
+  margin-bottom: 54px;
+  color: var(--muted);
+}
+
+.privacy-page section {
+  margin-top: 36px;
+}
+
+.privacy-page section h2 {
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+}
+
+.privacy-page section p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.privacy-page section a {
+  color: inherit;
+  font-weight: 800;
+}
+
+.privacy-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 48px;
 }
 
 @media (max-width: 940px) {
@@ -823,6 +954,22 @@ a:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .consent-banner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .consent-actions .button {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
   .section-shell,
   .site-header {
     width: min(calc(100% - 30px), var(--max-width));
